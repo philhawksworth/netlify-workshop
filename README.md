@@ -1,8 +1,6 @@
-# netlify-workshop
-A collection of examples and exercises to demonstrate Netlify features and capabilities
-
-
 # Outline
+
+A collection of examples and exercises to demonstrate Netlify features and capabilities.
 
 All of these tasks will be covered by progressing through a single site project. Will will evolve this site and its capabilities as we advance through the examples.  
 
