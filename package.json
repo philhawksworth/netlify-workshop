@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch",
-    "build": "gulp build && npm build:functions",
+    "build": "gulp build && npm run build:functions",
     "build:html": "gulp html",
     "build:css": "gulp scss",
     "build:functions": "netlify-lambda build src/lambda"
