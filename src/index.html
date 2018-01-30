@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Raffle time!</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css" />
+
+  </head>
+  <body class="home">
+    <header>
+      <h1>Ooooh, there's going to be a raffle!</h1>
+      <p>We'll be drawing a name later. If you want to be in the draw, add your twitter</p>
+    </header>
+    <section>
+        <form name="raffle-smashing-london-2018" netlify-honeypot="full-name" action="thanks" netlify>
+          <p class="honey">
+            <label>Your full name: <input name="full-name"></label>
+          </p>
+          <p>
+            <label for="twitter">Your twitter handle<small>What should we call you?</small></label>
+            <input type="text" name="twitter" id="twitter">
+          </p>
+          <p>
+            <button type="submit" class="btn">Enter the raffle</button>
+          </p>
+        </form>
+    </section>
+    <footer>
+      This site is hosted on Netlify. You can host your own.
+    </footer>
+  </body>
+</html>
