@@ -25,7 +25,7 @@ export function handler(event, context, callback) {
       return callback(null, {
         statusCode: 200,
         headers: {"Content-Typ": "application/json"},
-        body: JSON.stringify(results)
+        body: JSON.stringify({ items: results })
       })
     } else {
       return callback(null, {
