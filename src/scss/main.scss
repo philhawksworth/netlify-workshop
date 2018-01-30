@@ -6,6 +6,7 @@
   padding: 0;
 }
 
+
 body {
   text-align: center;
   margin-left: auto;
@@ -13,7 +14,6 @@ body {
   font-family: georgia, serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-
 }
 
 .container {
@@ -24,4 +24,29 @@ body {
   @include bp(mid) {
     width: 600px;
   }
+}
+
+header {
+  padding-top: 6em;
+  padding-bottom: 6em;
+  background-color: aquamarine;
+}
+
+.content {
+  padding-top: 3em;
+  padding-bottom: 6em;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: aquamarine;
+}
+
+
+.honey {
+  display: none;
 }
