@@ -13,9 +13,14 @@ export function handler(event, context, callback) {
   request(url, function(err, response, body){
     if(!err && response.statusCode === 200){
       console.log("...we got a result");
-      callback(null, {
+      return callback(null, {
         statusCode: 200,
         body: body
+      })
+    } else {
+      return callback(null, {
+        statusCode: 200,
+        body: err
       })
     }
   });
