@@ -12,6 +12,8 @@ export function handler(event, context, callback) {
   console.log("Requesting", url);
 
   request(url, function(err, response, body){
+
+    // format the response to be a bit mor concise and return it to the client
     if(!err && response.statusCode === 200){
       var results = [];
       var formsData = JSON.parse(body);
@@ -22,6 +24,7 @@ export function handler(event, context, callback) {
       }
       return callback(null, {
         statusCode: 200,
+        headers: {"Content-Typ": "application/json"},
         body: JSON.stringify(results)
       })
     } else {
