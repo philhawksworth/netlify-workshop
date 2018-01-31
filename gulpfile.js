@@ -14,8 +14,6 @@ gulp.task('clean-build', function () {
   return gulp.src(buildDest, {read: false})
     .pipe(clean());
 });
-
-
 // Delete our old css files
 gulp.task('clean-css', function () {
   return gulp.src(buildDest + "/css/**/*", {read: false})
@@ -54,7 +52,7 @@ gulp.task("js", function () {
 
 
 // Watch working folders for changes
-gulp.task("watch", ["render", "scss", "js"], function () {
+gulp.task("watch", ["build"], function () {
   gulp.watch(buildSrc + "/scss/**/*", ["scss"]);
   gulp.watch(buildSrc + "/js/**/*", ["js"]);
   gulp.watch(buildSrc + "/pages/**/*", ["render"]);
@@ -62,12 +60,12 @@ gulp.task("watch", ["render", "scss", "js"], function () {
 
 
 // build the site
-gulp.task('build', function(callback) {
+gulp.task("build", function(callback) {
   runSequence(
-    'clean-build',
-    'render',
-    'scss',
-    'js',
+    "clean-build",
+    "render",
+    "scss",
+    "js",
     callback
   );
 });
