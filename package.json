@@ -8,7 +8,9 @@
     "watch": "gulp watch",
     "build": "gulp build && npm run build:functions",
     "build:html": "gulp html",
+    "render": "gulp render",
     "build:css": "gulp scss",
+    "build:js": "gulp js",
     "build:functions": "netlify-lambda build src/lambda"
   },
   "keywords": [],
@@ -18,8 +20,10 @@
     "dotenv": "^5.0.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
+    "gulp-nunjucks": "^3.1.1",
     "gulp-sass": "^3.1.0",
     "netlify-lambda": "^0.2.0",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "run-sequence": "^2.2.1"
   }
 }

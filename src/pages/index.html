@@ -1,0 +1,18 @@
+{% extends "./layouts/_base.html" %}
+
+{% block content %}
+<form name="raffle-smashing-london-2018" netlify-honeypot="full-name" action="thanks" netlify>
+  <p class="honey">
+    <label>Your full name: <input name="full-name"></label>
+  </p>
+  <p>
+    <label for="twitter">Your twitter handle<small>What should we call you?</small></label>
+    <input type="text" name="twitter" id="twitter">
+  </p>
+  <p>
+    <button type="submit" class="btn">Enter the raffle</button>
+  </p>
+</form>
+{% endblock %}
+
+

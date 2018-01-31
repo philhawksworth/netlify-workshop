@@ -22,10 +22,13 @@ export function handler(event, context, callback) {
           "twitterHandle": formsData[item].data.twitter
         });
       }
+      var data = {
+        "items" : results
+      };
       return callback(null, {
         statusCode: 200,
-        headers: {"Content-Typ": "application/json"},
-        body: JSON.stringify({ items: results })
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
       })
     } else {
       return callback(null, {
