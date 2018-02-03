@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Raffle time!</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="home">
+    <header>
+      <div class="container">
+        <h1>Ooooooooh!<br>There's going to be a raffle!</h1>
+      </div>
+    </header>
+    <div class="content">
+      <div class="container">
+      {% block content -%}{% endblock -%}
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <p>This reference site is built using the <a href="https://www.jamstack.org">JAMstack</a> and hosted on <a href="https://www.netlify.com">Netlify</a>.</p>
+        <p><a href="/about">More info</a> on what, why and how you can clone it and play along.</p>
+      </div>
+    </footer>
+    {% block bodyend -%}{% endblock -%}
+  </body>
+</html>

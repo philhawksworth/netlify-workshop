@@ -2,13 +2,13 @@
 
 A collection of examples and exercises to demonstrate Netlify features and capabilities.
 
-All of these tasks will be covered by progressing through a single site project. Will will evolve this site and its capabilities as we advance through the examples.  
+All of these tasks will be covered by progressing through a single site project. Will will evolve this site and its capabilities as we advance through the examples.
 
 ---
 
 ## Getting started
 
-- Short intro: What is Netlify? 
+- Short intro: What is Netlify?
 - Prerequisites for playing along
 - Accessing the examples: This repo and conventions
 - Instant access via Deploy To Netlify button
