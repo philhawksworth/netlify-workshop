@@ -11,7 +11,12 @@ All of these tasks will be covered by progressing through a single site project.
 - Short intro: What is Netlify?
 - Prerequisites for playing along
 - Accessing the examples: This repo and conventions
-- Instant access via Deploy To Netlify button
+
+### Instant access via Deploy To Netlify button
+You cabn create your own instance of this site on Netlify by clicking the Ceploy to Netlify bitton below. This will clone this repo to your own githib account and then setup a new site for you on Neltify. Try it:
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/netlify-workshop)
+  
 
 
 ## Builds and deployments
