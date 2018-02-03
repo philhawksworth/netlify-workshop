@@ -3,11 +3,17 @@ var gulp        = require("gulp");
 var sass        = require("gulp-sass");
 var clean       = require('gulp-clean');
 var nunjucks    = require('gulp-nunjucks')
+var serve       = require('gulp-serve');
 
 // what goes where?
 var buildSrc = "src";
 var buildDest = "dist";
 
+// local webserver for development
+gulp.task('serve', serve({
+  root: [buildDest],
+  port: 8008,
+}));
 
 // cleanup the build output
 gulp.task('clean-build', function () {
