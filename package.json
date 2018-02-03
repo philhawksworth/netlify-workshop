@@ -8,7 +8,6 @@
     "start": "gulp watch",
     "serve": "gulp serve",
     "build": "gulp build && npm run build:functions",
-    "build:html": "gulp html",
     "render": "gulp render",
     "build:css": "gulp scss",
     "build:js": "gulp js",

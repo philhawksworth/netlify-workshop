@@ -1,9 +1,4 @@
 [build]
   Functions = "functions"
   command = "npm run build"
-
-# proxy to the entry form data
-[[redirects]]
-  from = "/api/entries"
-  to = "/.netlify/functions/entry-feed"
-  status = 200
+  publish = "dist"
