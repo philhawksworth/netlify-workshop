@@ -1,47 +1,52 @@
-
-// // $.getJSON( "https://raffle.netlify.com/.netlify/functions/entry-feed?callback=?showEntrants");
-
-// // (function() {
-
-// //   console.log("get it");
-// //   var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-// //   // var flickerAPI = "https://raffle.netlify.com/.netlify/functions/entry-feed?callback=?showEntrants=?";
-// //   $.getJSON(flickerAPI)
-// //   .done(function( json ) {
-// //     console.log( "JSON Data: " + json );
-// //   })
-// //   .fail(function( jqxhr, textStatus, error ) {
-// //     var err = textStatus + ", " + error;
-// //     console.log( "Request Failed: " + err );
-// //   })
-
-// //   // .done(function( data ) {
-// //   //     // $.each( data.items, function( i, item ) {
-// //   //     //   $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
-// //   //     //   if ( i === 3 ) {
-// //   //     //     return false;
-// //   //     //   }
-// //   //     // });
-// //   //   });
-// // })();
+var highlighter;
 
 
-// (function() {
-//   // var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-//   var flickerAPI = "http://localhost:9000/entry-feed?jsoncallback=?";
-//   // var flickerAPI = "https://raffle.netlify.com/.netlify/functions/entry-feed?jsoncallback=?";
-//   $.getJSON( flickerAPI, {
-//     format: "json"
-//   })
-//     .done(function( json ) {
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
-//       console.log(json)
 
-//       // $.each( data.items, function( i, item ) {
-//       //   console.log(item);
-//       //   if ( i === 3 ) {
-//       //     return false;
-//       //   }
-//       // });
-//     });
-// })();
+function spin(entries){
+  Array.prototype.map.call(entries, function(entry) {
+    entry.classList.remove("selected");
+  });
+  var next = getRandomInt(entries.length);
+  entries[next].classList.add("selected")
+  highlighter = requestAnimationFrame(function(){
+    spin(entries)
+  });
+}
+
+
+function freeze() {
+  cancelAnimationFrame(highlighter);
+}
+
+
+var btn = document.querySelector('#btn-spin');
+btn.addEventListener('click', function (event) {
+  event.preventDefault();
+  var entries = document.querySelectorAll(".entry");
+  highlighter = requestAnimationFrame(function(){
+    spin(entries)
+  });
+}, false);
+
+
+var btn = document.querySelector('#btn-pick');
+btn.addEventListener('click', function (event) {
+  event.preventDefault();
+  freeze();
+}, false);
+
+
+fetch('/js/dummy-entries.js')
+  .then(function(response) { return response.json(); })
+  .then(function(data) {
+    var html = "";
+    for(var person in data.items) {
+      html += "<div class='entry'>"+ data.items[person].twitterHandle +"</div>";
+    }
+    document.querySelector("#list").innerHTML = html;
+    return;
+  });
