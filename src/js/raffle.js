@@ -40,8 +40,8 @@ btn.addEventListener('click', function (event) {
 }, false);
 
 
-// fetch('/.netlify/functions/entry-feed')
-fetch('/js/dummy-entries.js')
+// fetch('/js/dummy-entries.js')
+fetch('/.netlify/functions/entry-feed')
   .then(function(response) { return response.json(); })
   .then(function(data) {
     var html = "";
