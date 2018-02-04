@@ -1,0 +1,32 @@
+{% extends "./layouts/_base.html" %}
+
+{% block content %}
+
+<h2>Smashing Conference prize draw</h2>
+<p>
+  Tonight at JAMstack London, we'll be giving away 2 tickets to the upcoming Smashing Conference.
+</p>
+<p>
+  To enter the draw, add your Twitter handle to the pot.
+</p>
+
+<form name="raffle-smashing-london-2018" netlify-honeypot="full-name" action="draw" netlify>
+  <p class="honey">
+    <label>Your full name: <input name="full-name"></label>
+  </p>
+  <p>
+    <label for="twitter">Your twitter handle<small>No spamming. We promise.</small></label>
+    <input type="text" name="twitter" id="twitter">
+  </p>
+  <p>
+    <button type="submit" class="btn">Enter the raffle</button>
+  </p>
+</form>
+
+
+<p>
+  Who is already in <a href="/draw">the draw</a>?
+</p>
+{% endblock %}
+
+
