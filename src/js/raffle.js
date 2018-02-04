@@ -45,8 +45,7 @@ fetch('/.netlify/functions/entry-feed')
   .then(function(data) {
     var html = "";
     for(var person in data.items) {
-      html += '<li class="entry">'+ data.items[person].twitterHandle +
-      '<a href="https://twitter.com/'+ data.items[person].twitterHandle +'"><img src=" https://twivatar.glitch.me/'+ data.items[person].twitterHandle +'"></a>' +
+      html += '<li class="entry"><a href="https://twitter.com/'+ data.items[person].twitterHandle +'"><img src=" https://twivatar.glitch.me/'+ data.items[person].twitterHandle +'"></a>' +
       '<a class="name" href="https://twitter.com/'+ data.items[person].twitterHandle +'">'+ data.items[person].twitterHandle +'</a></li>';
     }
     document.querySelector("#list").innerHTML = html;
