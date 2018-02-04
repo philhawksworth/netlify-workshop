@@ -133,6 +133,7 @@ input {
   font-style: italic;
 }
 
+.btn,
 button {
   padding: 0.6em 1em 0.6em 1em;
   text-decoration: none;
@@ -171,19 +172,31 @@ button {
 
 
 .list {
+
+  padding-top: 2em;
+
   .entry {
     display: inline-block;
     text-align: center;
     width: 19%;
+    padding-top:0.4em;
 
     img {
-      width:100px;
-      border-radius: 50px;
+      width:60px;
+      border-radius: 30px;
+
+      @include bp(mid) {
+        width:100px;
+        border-radius: 50px;
+      }
     }
-    a {
-      display: block;
-      text-decoration: none;
-      font-size: 0.8em;
+    a.name {
+      display: none;
+      @include bp(mid) {
+        display: block;
+        text-decoration: none;
+        font-size: 0.8em;
+      }
     }
   }
 }
