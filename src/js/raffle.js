@@ -41,7 +41,7 @@ btn.addEventListener('click', function (event) {
 
 
 // fetch('/js/dummy-entries.js')
-fetch('/.netlify/functions/entry-feed.js')
+fetch('/.netlify/functions/entry-feed')
   .then(function(response) { return response.json(); })
   .then(function(data) {
 
