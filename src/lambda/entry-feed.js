@@ -18,7 +18,10 @@ export function handler(event, context, callback) {
       var results = [];
       var formsData = JSON.parse(body);
       for(var item in formsData) {
-        results.push(formsData[item].data.twitter.replace("@", ""));
+        var handle = formsData[item].data.twitter.replace("@", "");
+        if(handle.length > 0) {
+          results.push(handle);
+        }
       }
       var data = {
         "handles" : [...new Set(results)]
