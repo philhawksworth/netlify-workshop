@@ -40,13 +40,13 @@ btn.addEventListener('click', function (event) {
 }, false);
 
 
-fetch('/js/dummy-entries.js')
-  .then(function(response) { return response.json(); })
-  .then(function(data) {
-    var html = "";
-    for(var person in data.items) {
-      html += "<div class='entry'>"+ data.items[person].twitterHandle +"</div>";
-    }
-    document.querySelector("#list").innerHTML = html;
-    return;
-  });
+// fetch('/js/dummy-entries.js')
+//   .then(function(response) { return response.json(); })
+//   .then(function(data) {
+//     var html = "";
+//     for(var person in data.items) {
+//       html += "<div class='entry'>"+ data.items[person].twitterHandle +"</div>";
+//     }
+//     document.querySelector("#list").innerHTML = html;
+//     return;
+//   });

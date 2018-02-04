@@ -4,7 +4,14 @@
 <h2>Thanks. Draw soon.</h2>
 <a href="#" class="btn" id="btn-spin">Spin</a>
 <a href="#" class="btn" id="btn-pick">Pick a winner</a>
-<div class="list" id="list"></div>
+
+<div class="list" id="list">
+  {% for item in items %}
+  <li class="entry">{{ item.twitterHandle }}</li>
+  {% else %}
+  <li>Nobody wants the tickets!</li>
+  {% endfor %}
+</div>
 {% endblock %}
 
 
