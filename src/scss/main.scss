@@ -167,7 +167,7 @@ button {
 }
 
 .selected {
-  background-color: aqua;
+
 }
 
 
@@ -180,16 +180,22 @@ button {
     text-align: center;
     width: 19%;
     padding-top:0.4em;
+    border-radius: 3px;
 
     img {
       width:60px;
-      border-radius: 30px;
+      border-radius: 34px;
+      border-style: solid;
+      border-width: 4px;
+      border-color: #333;
 
       @include bp(mid) {
         width:100px;
-        border-radius: 50px;
+        border-radius: 56px;
+        border-width: 6px;
       }
     }
+
     a.name {
       display: none;
       @include bp(mid) {
@@ -197,6 +203,16 @@ button {
         text-decoration: none;
         font-size: 0.8em;
       }
+    }
+  }
+
+  .entry.selected {
+    background-color: #222;
+    a {
+      color: #fff;
+    }
+    img {
+      border-color: greenyellow;
     }
   }
 }
