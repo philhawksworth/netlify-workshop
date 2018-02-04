@@ -40,13 +40,9 @@ btn.addEventListener('click', function (event) {
 }, false);
 
 
-// fetch('/js/dummy-entries.js')
-fetch('/.netlify/functions/entry-feed.js')
+fetch('/.netlify/functions/entry-feed')
   .then(function(response) { return response.json(); })
   .then(function(data) {
-
-    console.log(data);
-
     var html = "";
     for(var person in data.items) {
       html += '<li class="entry">'+ data.items[person].twitterHandle +'</li>' +
