@@ -20,9 +20,8 @@ export function handler(event, context, callback) {
       for(var item in formsData) {
         results.push(formsData[item].data.twitter.replace("@", ""));
       }
-      var j = [...new Set(results)]
       var data = {
-        "handles" : j
+        "handles" : [...new Set(results)]
       };
       return callback(null, {
         statusCode: 200,
