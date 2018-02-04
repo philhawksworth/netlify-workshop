@@ -6,7 +6,7 @@ var nunjucks    = require('gulp-nunjucks')
 var serve       = require('gulp-serve');
 var request     = require("request");
 var data        = require("gulp-data");
-var fs            = require('fs');
+var fs           = require('fs');
 
 // load environment variables
 var config = require('dotenv').config()

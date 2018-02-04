@@ -41,7 +41,7 @@ btn.addEventListener('click', function (event) {
 
 
 // fetch('/js/dummy-entries.js')
-fetch('/.netlify/functions/entry-feed')
+fetch('/.netlify/functions/entry-feed.js')
   .then(function(response) { return response.json(); })
   .then(function(data) {
 
@@ -51,7 +51,7 @@ fetch('/.netlify/functions/entry-feed')
     for(var person in data.items) {
       html += '<li class="entry">'+ data.items[person].twitterHandle +'</li>' +
       '<a href="https://twitter.com/'+ data.items[person].twitterHandle +'"><img src=" http://twivatar.glitch.me/'+ data.items[person].twitterHandle +'"></a>' +
-      '<a class="name" href="https://twitter.com/'+ data.items[person].twitterHandle +'">{{ item.twitterHandle }}</a></li>';
+      '<a class="name" href="https://twitter.com/'+ data.items[person].twitterHandle +'">'+ data.items[person].twitterHandle +'</a></li>';
     }
     document.querySelector("#list").innerHTML = html;
     return;
