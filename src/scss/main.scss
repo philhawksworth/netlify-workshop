@@ -27,9 +27,15 @@ body {
   margin-right: auto;
   width:90%;
   @include bp(mid) {
-    width: 600px;
+    text-align: left;
+    width: 560px;
+  }
+  @include bp(wide) {
+    width: 900px;
   }
 }
+
+
 
 h1, h2, h3 {
   line-height: 1.3em;
@@ -90,21 +96,7 @@ footer {
   }
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 90%;
-  @include bp(narrow) {
-  }
-  @include bp(mid) {
-    text-align: left;
-    width: 560px;
-  }
-  @include bp(wide) {
-    width: 700px;
-  }
-}
+
 
 form {
   padding-top:2em;
@@ -174,13 +166,19 @@ button {
 .list {
 
   padding-top: 2em;
+  text-align: center;
 
   .entry {
     display: inline-block;
     text-align: center;
     width: 19%;
     padding-top:0.4em;
+    margin-top:1em;
     border-radius: 3px;
+
+    @include bp(mid) {
+      width: 16%;
+    }
 
     img {
       width:60px;
@@ -190,6 +188,11 @@ button {
       border-color: #333;
 
       @include bp(mid) {
+        width:70px;
+        border-radius: 74px;
+        border-width: 4px;
+      }
+      @include bp(wide) {
         width:100px;
         border-radius: 56px;
         border-width: 6px;
