@@ -18,12 +18,11 @@ export function handler(event, context, callback) {
       var results = [];
       var formsData = JSON.parse(body);
       for(var item in formsData) {
-        results.push({
-          "twitterHandle": formsData[item].data.twitter
-        });
+        results.push(formsData[item].data.twitter.replace("@", ""));
       }
+      var j = [...new Set(results)]
       var data = {
-        "items" : results
+        "handles" : j
       };
       return callback(null, {
         statusCode: 200,
