@@ -41,12 +41,18 @@ btn.addEventListener('click', function (event) {
 
 
 // fetch('/js/dummy-entries.js')
-//   .then(function(response) { return response.json(); })
-//   .then(function(data) {
-//     var html = "";
-//     for(var person in data.items) {
-//       html += "<div class='entry'>"+ data.items[person].twitterHandle +"</div>";
-//     }
-//     document.querySelector("#list").innerHTML = html;
-//     return;
-//   });
+fetch('/.netlify/functions/entry-feed.js')
+  .then(function(response) { return response.json(); })
+  .then(function(data) {
+
+    console.log(data);
+
+    var html = "";
+    for(var person in data.items) {
+      html += '<li class="entry">'+ data.items[person].twitterHandle +'</li>' +
+      '<a href="https://twitter.com/'+ data.items[person].twitterHandle +'"><img src=" http://twivatar.glitch.me/'+ data.items[person].twitterHandle +'"></a>' +
+      '<a class="name" href="https://twitter.com/'+ data.items[person].twitterHandle +'">{{ item.twitterHandle }}</a></li>';
+    }
+    document.querySelector("#list").innerHTML = html;
+    return;
+  });

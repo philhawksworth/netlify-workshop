@@ -6,11 +6,7 @@
 <a href="#" class="btn" id="btn-pick">Pick a winner</a>
 
 <div class="list" id="list">
-  {% for item in items %}
-  <li class="entry"><a href="https://twitter.com/{{ item.twitterHandle }}"><img src=" http://twivatar.glitch.me/{{ item.twitterHandle }}"></a><a class="name" href="https://twitter.com/{{ item.twitterHandle }}">{{ item.twitterHandle }}</a></li>
-  {% else %}
   <li>Nobody wants the tickets!</li>
-  {% endfor %}
 </div>
 {% endblock %}
 
