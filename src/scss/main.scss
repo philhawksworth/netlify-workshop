@@ -97,9 +97,9 @@ footer {
 }
 
 
-
 form {
   padding-top:2em;
+  padding-bottom:2em;
 }
 
 
@@ -149,6 +149,11 @@ button {
   }
 }
 
+.meta {
+  font-size: 0.7em;
+  font-style: italic;
+  padding-left: 0.4em;
+}
 
 .honey {
   display: none;
