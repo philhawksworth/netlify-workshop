@@ -7,6 +7,8 @@
 }
 
 body {
+  background-color: $body-color;
+  color:  $text-color;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -36,7 +38,6 @@ body {
 }
 
 
-
 h1, h2, h3 {
   line-height: 1.3em;
 }
@@ -50,6 +51,26 @@ p {
   margin-bottom: 0.8em
 }
 
+a:link,
+a:visited {
+  text-decoration: none;
+  color: $text-color-bold;
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  border-bottom-color: mix($text-color, $body-color, 60%);
+}
+a:hover,
+a:focus {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: mix($text-color, $body-color, 60%);
+}
+
+a.dtn{
+  border-bottom-style: none;
+}
+
+
 header,
 footer {
   .container {
@@ -60,12 +81,12 @@ footer {
 
 header {
   .container {
-    border-bottom: solid 4px rgba(0,0,0,0.04);
+    border-bottom: solid 4px mix($text-color, $body-color, 5%);
     @include bp(narrow) {
-      border-bottom: solid 8px rgba(0,0,0,0.04);
+      border-bottom: solid 8px mix($text-color, $body-color, 5%);
     }
     @include bp(mid) {
-      border-bottom: solid 16px rgba(0,0,0,0.04);
+      border-bottom: solid 16px mix($text-color, $body-color, 5%);
     }
   }
 }
@@ -73,12 +94,12 @@ header {
 footer {
   font-size: 0.8em;
   .container {
-    border-top: solid 4px rgba(0,0,0,0.04);
+    border-top: solid 4px mix($text-color, $body-color, 5%);
     @include bp(narrow) {
-      border-top: solid 8px rgba(0,0,0,0.04);
+      border-top: solid 8px mix($text-color, $body-color, 5%);
     }
     @include bp(mid) {
-      border-top: solid 16px rgba(0,0,0,0.04);
+      border-top: solid 16px mix($text-color, $body-color, 5%);
     }
   }
   p {
@@ -104,9 +125,10 @@ form {
 
 
 label {
-  color: #333;
+  color: mix($text-color, $body-color,90%);
   font-style: italic;
   small {
+    color: mix($text-color, $body-color, 60%);
     font-size: 0.7em;
     margin-left: 0.4em;
   }
@@ -114,38 +136,43 @@ label {
 
 input {
   width: 70%;
-  border: solid 4px #eee;
+  border: solid 4px mix($text-color, $body-color, 30%);
   border-radius: 4px;
-  background-color: rgba(0,0,0,0.02);
+  background-color: mix($text-color, $body-color, 5%);
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 4px;
   font-family: georgia, serif;
   font-size: 18px;
   font-style: italic;
+  color: $text-color;
 }
 
-.btn,
+a.btn:link,
+a.btn:visited,
 button {
   padding: 0.6em 1em 0.6em 1em;
   text-decoration: none;
-  border: 1px solid rgba(0,0,0,0.7);
-  border-radius: 2px;
-  color: #000;
-  box-shadow: 0 0px 8px 0 rgba(0,0,0,.2);
+  border-style:none;
+  border-bottom-style: none;
+  border-radius: 3px;
+  color: $accent-color-contrast;
+  background-color:$accent-color;
+  box-shadow: 0 0px 8px 0 mix($text-color, $body-color, 50%);
   font-size: 0.9em;
   font-family: georgia, serif;
   font-style: italic;
 
   &:hover,
   &:focus {
-    color: rgb(192, 255, 17);
-    background-color: rgba(0,0,0,1);
+    border-style: none;
+    background-color:$accent-color-contrast;
+    color: $accent-color;
     cursor: pointer;
   }
   &:active {
-    color: rgba(0,0,0,1);
-    background-color: rgb(192, 255, 17);
+    background-color: $accent-color-contrast;
+    color: $accent-color;
   }
 }
 
@@ -186,8 +213,7 @@ button {
       border-radius: 27px;
       border-style: solid;
       border-width: 2px;
-      border-color: #333;
-
+      border-color: $text-color;
       @include bp(narrow) {
         width:60px;
         border-radius: 34px;
@@ -206,8 +232,14 @@ button {
       }
     }
 
+    a:link,
+    a:visited {
+      border-bottom-style: none;
+    }
+
     a.name {
       display: none;
+      border-bottom-style: none;
       @include bp(mid) {
         display: block;
         text-decoration: none;
@@ -217,12 +249,12 @@ button {
   }
 
   .entry.selected {
-    background-color: #222;
+    background-color: mix($text-color, $body-color, 95%);
     a {
-      color: #fff;
+      color: mix($text-color, $body-color, 10%);
     }
     img {
-      border-color: greenyellow;
+      border-color: $accent-color;
     }
   }
 }

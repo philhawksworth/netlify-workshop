@@ -1,3 +1,3 @@
 {
-  handles : ["philhawksworth", "netlify", "netlifyCMS", "netlifyStatus"]
+  "handles" : ["philhawksworth", "netlify", "netlifyCMS", "netlifyStatus"]
 }
