@@ -108,6 +108,7 @@ gulp.task("watch", ["build"], function () {
   gulp.watch(buildSrc + "/scss/**/*", ["scss"]);
   gulp.watch(buildSrc + "/js/**/*", ["js"]);
   gulp.watch(buildSrc + "/pages/**/*", ["render"]);
+  gulp.watch(buildSrc + "/entries.json", ["render"]);
 });
 
 
