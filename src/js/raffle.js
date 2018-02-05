@@ -40,8 +40,13 @@ btn.addEventListener('click', function (event) {
 }, false);
 
 
-// fetch('/js/dummy-entries.js')
-fetch('/.netlify/functions/entry-feed')
+// format our argument based on the path
+var formName = document.location.pathname.split("/draw")[0];
+var formName = formName.replace("-","_");
+var formName = formName.replace("/","");
+var formName = "raffle_" + formName;
+
+fetch('/.netlify/functions/entry-feed?form_name='+formName)
   .then(function(response) { return response.json(); })
   .then(function(data) {
     var html = "";
