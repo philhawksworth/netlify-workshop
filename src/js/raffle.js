@@ -1,20 +1,39 @@
 var highlighter;
-
+var timeoutID;
+var nextDelay;
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
 
-function spin(entries){
+function spin(teaseDuration){
+  var entries = document.querySelectorAll(".entry");
   Array.prototype.map.call(entries, function(entry) {
     entry.classList.remove("selected");
   });
   var next = getRandomInt(entries.length);
   entries[next].classList.add("selected")
-  highlighter = requestAnimationFrame(function(){
-    spin(entries)
-  });
+
+  console.log("teaseDuration ", teaseDuration)
+
+  if(teaseDuration > 400) {
+    // console.log("enough!");
+    document.querySelector(".selected").classList.add("winner");
+    window.clearTimeout(timeoutID);
+    return freeze();
+  } else {
+    nextDelay = parseInt(teaseDuration * 1.05, 10);
+    // console.log("nextDelay", nextDelay);
+  }
+
+  timeoutID = window.setTimeout(function(){
+    window.clearTimeout(timeoutID);
+    highlighter = requestAnimationFrame(function(){
+      spin(nextDelay);
+    });
+  }, teaseDuration);
+
 }
 
 
@@ -26,17 +45,9 @@ function freeze() {
 var btn = document.querySelector('#btn-spin');
 btn.addEventListener('click', function (event) {
   event.preventDefault();
-  var entries = document.querySelectorAll(".entry");
   highlighter = requestAnimationFrame(function(){
-    spin(entries)
+    spin(30)
   });
-}, false);
-
-
-var btn = document.querySelector('#btn-pick');
-btn.addEventListener('click', function (event) {
-  event.preventDefault();
-  freeze();
 }, false);
 
 
@@ -46,7 +57,8 @@ var formName = formName.replace("-","_");
 var formName = formName.replace("/","");
 var formName = "raffle_" + formName;
 
-fetch('/.netlify/functions/entry-feed?form_name='+formName)
+// fetch('/.netlify/functions/entry-feed?form_name='+formName)
+fetch('/js/dummy-entries.js')
   .then(function(response) { return response.json(); })
   .then(function(data) {
     var html = "";

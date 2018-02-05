@@ -257,4 +257,14 @@ button {
       border-color: $accent-color;
     }
   }
+
+  .entry.selected.winner {
+    background-color: red;
+    a {
+      color: mix($text-color, $body-color, 10%);
+    }
+    img {
+      border-color: $accent-color;
+    }
+  }
 }
