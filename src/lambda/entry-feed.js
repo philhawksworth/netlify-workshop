@@ -9,6 +9,9 @@ export function handler(event, context, callback) {
   // select the form ID environment variable depending on what we requested
   var form_id = "form_id_" + event.queryStringParameters['form_name'];
   var FORM_ID = process.env[form_id] || config[form_id];
+
+  console.log(form_id, FORM_ID);
+
   var API_AUTH = process.env.form_api_access_token || config.form_api_access_token;
 
   // define the desired URL
