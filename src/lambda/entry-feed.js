@@ -30,7 +30,6 @@ export function handler(event, context, callback) {
         }
       }
       var data = {
-
         "handles" : [...new Set(results)]
       };
       return callback(null, {
