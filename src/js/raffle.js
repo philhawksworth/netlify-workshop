@@ -57,8 +57,8 @@ var formName = formName.replace("-","_");
 var formName = formName.replace("/","");
 var formName = "raffle_" + formName;
 
-// fetch('/.netlify/functions/entry-feed?form_name='+formName)
-fetch('/js/dummy-entries.js')
+// fetch('/js/dummy-entries.js')
+fetch('/.netlify/functions/entry-feed?form_name='+formName)
   .then(function(response) { return response.json(); })
   .then(function(data) {
     var html = "";
