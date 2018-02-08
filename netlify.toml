@@ -12,3 +12,8 @@
   from = "/draw"
   to = "/smashing/draw"
   status = 302
+
+[[redirects]]
+  from = "/when"
+  to = "https://smashingconf.com/"
+  status = 200
