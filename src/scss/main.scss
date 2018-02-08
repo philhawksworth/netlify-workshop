@@ -156,8 +156,8 @@ button {
   border-style:none;
   border-bottom-style: none;
   border-radius: 3px;
-  color: $accent-color-contrast;
-  background-color:$accent-color;
+  color: #000;
+  background-color: #4c4;
   box-shadow: 0 0px 8px 0 mix($text-color, $body-color, 50%);
   font-size: 0.9em;
   font-family: georgia, serif;
@@ -166,13 +166,13 @@ button {
   &:hover,
   &:focus {
     border-style: none;
-    background-color:$accent-color-contrast;
+    background-color: rgb(188, 68, 204);
     color: $accent-color;
     cursor: pointer;
   }
   &:active {
-    background-color: $accent-color-contrast;
-    color: $accent-color;
+    background-color:#000
+    color: #fff;
   }
 }
 
