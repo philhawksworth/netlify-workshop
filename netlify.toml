@@ -5,10 +5,10 @@
 
 [[redirects]]
   from = "/"
-  to = "/jamstack-london"
+  to = "/smashing"
   status = 302
 
 [[redirects]]
   from = "/draw"
-  to = "/jamstack-london/draw"
+  to = "/smashing/draw"
   status = 302
