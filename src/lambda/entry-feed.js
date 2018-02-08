@@ -10,7 +10,7 @@ export function handler(event, context, callback) {
   var form_id = "form_id_" + event.queryStringParameters['form_name'];
   var FORM_ID = process.env[form_id] || config[form_id];
 
-  console.log(form_id, FORM_ID);
+  console.log(form_id );
 
   var API_AUTH = process.env.form_api_access_token || config.form_api_access_token;
 
@@ -26,6 +26,7 @@ export function handler(event, context, callback) {
       for(var item in formsData) {
         var handle = formsData[item].data.twitter.replace("@", "");
         if(handle.length > 0) {
+          console.log("Entry found: ", handle)
           results.push(handle);
         }
       }
