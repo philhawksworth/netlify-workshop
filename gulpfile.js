@@ -91,7 +91,7 @@ gulp.task("get:entries", function () {
         if(err) {
           return console.log(err);
         } else {
-          return console.log("Tweets data saved.");
+          return console.log("Entries data saved.");
         }
       });
     } else {
