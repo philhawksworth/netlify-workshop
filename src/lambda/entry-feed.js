@@ -13,7 +13,7 @@ export function handler(event, context, callback) {
 
   // define the desired URL
   var url = "https://api.netlify.com/api/v1/forms/" + FORM_ID + "/submissions/?access_token=" + API_AUTH;
-  console.log("Requesting", url);
+  console.log("Requesting THIS", url);
 
   request(url, function(err, response, body){
 
