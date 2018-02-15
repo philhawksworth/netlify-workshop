@@ -5,15 +5,10 @@
 
 [[redirects]]
   from = "/"
-  to = "/smashing"
+  to = "/show-and-tell"
   status = 302
 
 [[redirects]]
-  from = "/draw"
-  to = "/smashing/draw"
-  status = 302
-
-[[redirects]]
-  from = "/when"
+  from = "/where"
   to = "https://smashingconf.com/schedule/day:thursday"
   status = 200

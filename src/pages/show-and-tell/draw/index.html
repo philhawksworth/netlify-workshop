@@ -1,0 +1,18 @@
+{% extends "./layouts/_base.html" %}
+
+
+{% block content %}
+<h2>Shall we pick a winner?</h2>
+<a href="#" class="btn" id="btn-spin">Pick a winner</a>
+<span class="meta">
+  (only the official draw that we all do together will count... but you can always test it out)
+</span>
+<div class="list" id="list">
+  <p>Getting the list of entries to the prize draw...</p>
+</div>
+{% endblock %}
+
+
+{% block bodyend %}
+  <script src="/js/raffle.js"></script>
+{% endblock %}
