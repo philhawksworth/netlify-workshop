@@ -18,13 +18,11 @@ function spin(teaseDuration){
   console.log("teaseDuration ", teaseDuration)
 
   if(teaseDuration > 400) {
-    // console.log("enough!");
     document.querySelector(".selected").classList.add("winner");
     window.clearTimeout(timeoutID);
     return freeze();
   } else {
     nextDelay = parseInt(teaseDuration * 1.05, 10);
-    // console.log("nextDelay", nextDelay);
   }
 
   timeoutID = window.setTimeout(function(){
@@ -53,8 +51,8 @@ btn.addEventListener('click', function (event) {
 
 // format our argument based on the path
 var formName = document.location.pathname.split("/draw")[0];
-var formName = formName.replace("-","_");
-var formName = formName.replace("/","");
+var formName = formName.replace(/-/g, "_");
+var formName = formName.replace(/\//g,"");
 var formName = "raffle_" + formName;
 
 // fetch('/js/dummy-entries.js')
