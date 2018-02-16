@@ -8,6 +8,7 @@
   to = "/show-and-tell"
   status = 302
 
+
 [[redirects]]
   from = "/where"
   to = "https://rga.com"
